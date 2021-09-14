@@ -1,6 +1,8 @@
 package com.example.favoritefruits.controller;
 
 import com.example.favoritefruits.domain.Fruit;
+import com.example.favoritefruits.service.FavoriteFruitsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +14,13 @@ import java.util.List;
 @Controller
 public class FavoriteFruitsController {
 
-    @RequestMapping ("/list")
+    @Autowired
+    FavoriteFruitsService service;
 
+    @RequestMapping ("/list")
     public String list(Model model) {
-        List<Fruit> fruitsList = new ArrayList<>();
-        fruitsList.add(new Fruit (1, "もも", "説明"));
-        fruitsList.add(new Fruit (2, "バナナ", "説明"));
+
+        List<Fruit> fruitsList = service.getFavoriteFruits();
         model.addAttribute("fruitsList",fruitsList);
 
         return "list";
