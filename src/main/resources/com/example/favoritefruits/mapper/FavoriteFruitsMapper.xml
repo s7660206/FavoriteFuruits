@@ -6,4 +6,13 @@
     <select id = "selectAll" resultType = "com.example.favoritefruits.domain.Fruit">
         SELECT id ,fruit_name ,memo FROM favorite_fruits
     </select>
+
+    <select id = "selectByCondition" resultType = "com.example.favoritefruits.domain.Fruit">
+        SELECT id ,fruit_name ,memo FROM favorite_fruits
+        <where>
+            <if test="fruitName != null">
+                fruit_name LIKE CONCAT(#{fruitName},'%')
+            </if>
+        </where>
+    </select>
 </mapper>
