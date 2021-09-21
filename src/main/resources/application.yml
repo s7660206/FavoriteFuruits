@@ -1,6 +1,6 @@
 spring:
     datasource:
-        url: db-java-study-02.cyw9uluxdxar.ap-northeast-1.rds.amazonaws.com/favoritefruits
+        url: db-java-study-02.cyw9uluxdxar.ap-northeast-1.rds.amazonaws.com:3306/favoritefruits
         username: admin
         password: ppppaaaa
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -8,4 +8,4 @@ spring:
         init:
             mode: always
 server:
-    port: 38080
+    port: 28080
