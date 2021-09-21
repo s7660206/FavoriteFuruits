@@ -8,4 +8,4 @@ spring:
         init:
             mode: always
 server:
-    port: 28080
+    port: 38080
